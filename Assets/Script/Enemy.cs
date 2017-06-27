@@ -124,15 +124,19 @@ public class Enemy : MonoBehaviour
 
     public void DamageEnemy(int damage)
     {
+        //Logic
         cHealth -= damage;
         if (cHealth <= 0)
         {
             Death();
         }
 
+        //UI
         if (stats)
         {
             stats.SetHealth(cHealth, sHealth);
         }
+
+        //Anim
     }
 }

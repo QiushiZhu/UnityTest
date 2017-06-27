@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\PositionTest.cs" />
      <Compile Include="Assets\Script\Bubble.cs" />
+     <Compile Include="Assets\Script\BubbleManager.cs" />
      <Compile Include="Assets\Script\Enemy.cs" />
      <Compile Include="Assets\Script\EnemyStatsUI.cs" />
      <Compile Include="Assets\Script\FloatText.cs" />

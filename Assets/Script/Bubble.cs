@@ -3,18 +3,13 @@ using System.Collections;
 
 
 public class Bubble : MonoBehaviour {
-
-    SpriteRenderer sr;
-    float colorAlpha;
-
-    public float duration;
-    float liveTime;
-    GameManager _gm;
+   
 
     Transform InnerCircle;
     Transform OuterCicle;
 
-    public float rotateSpeed;
+    [SerializeField]
+    float rotateSpeed;
 
     void Awake()
     {
@@ -24,10 +19,6 @@ public class Bubble : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        sr = this.GetComponent<SpriteRenderer>();
-        colorAlpha = 1;
-        sr.color = new Color(1, 0, 0, colorAlpha);
-        liveTime = Time.time;
         
 	}
 	
@@ -35,11 +26,6 @@ public class Bubble : MonoBehaviour {
 	void Update () {
         InnerCircle.Rotate(0, 0, rotateSpeed);
         OuterCicle.Rotate(0, 0, -rotateSpeed);
-        //colorAlpha = colorAlpha - 1 / duration / 100;
-        //sr.color = new Color(1, 0, 0, colorAlpha);
-        if ((Time.time - liveTime) > duration)
-        {
-            //GameManager.KillBubble(this);
-        }
+        
 	}
 }
