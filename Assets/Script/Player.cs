@@ -11,6 +11,10 @@ public class Player : MonoBehaviour {
     public event EventHandler GoldChanged;
     private int levelCost;
     private int _gold;
+
+    public Text levelText;
+    public int RedBubbleDamageParam;
+
     public int Gold
     {
         get { return _gold; }
@@ -37,6 +41,7 @@ public class Player : MonoBehaviour {
         damage = (int)Mathf.RoundToInt(Mathf.Pow(1.05f, level) * level);
 
         LevelUpButtonUpdate();
+        SetLevel(level);
 	}
 	
 	// Update is called once per frame
@@ -52,6 +57,7 @@ public class Player : MonoBehaviour {
         damage = (int)Mathf.RoundToInt( Mathf.Pow(1.05f, level) * level);
 
         LevelUpButtonUpdate();
+        SetLevel(level);
     }
 
     void GoldChangedEventHandler(object sender, EventArgs e)
@@ -77,6 +83,11 @@ public class Player : MonoBehaviour {
         {
             levelUpButton.interactable = false;
         }
+    }
+
+    void SetLevel(int level)
+    {
+        levelText.text = level.ToString();
     }
 
     
