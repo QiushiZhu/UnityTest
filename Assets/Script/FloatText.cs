@@ -11,9 +11,6 @@ public class FloatText : MonoBehaviour {
 
     private float InitTime;
     public float stayTime;
-    //TODO:多个战斗文字怎么处理!
-    //想法是一个战斗文字对应一个floatText Prefab，prefab整理上移，消失，销毁
-    //在战斗的地方引用这个prefab
 
     public int damage;
 
@@ -30,7 +27,7 @@ public class FloatText : MonoBehaviour {
             sr.sprite = numbers[value];
         }
 
-        CenteringGameObjectsInX(Nums, anchor, 0.3f);
+        CenteringGameObjectsInX(Nums, anchor, 0.3f);        //控制间距为0.3
 
     }
 

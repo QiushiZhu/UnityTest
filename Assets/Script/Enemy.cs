@@ -43,8 +43,8 @@ public class Enemy : MonoBehaviour
     void MonsterInit()
     {
         stage = (int)Math.Ceiling(level / (double)levelInStage);
-
-        sHealth = (int)(Math.Pow(29.045 / TThealthDivider, stage) * bossStageDeterminer(level));
+        
+        sHealth = (int)(18.5 / TThealthDivider*Math.Pow(1.57, stage) * bossStageDeterminer(level));
         cHealth = sHealth;
 
         loot = Mathf.CeilToInt(TThealthDivider * sHealth * (0.02f + 0.00045f * stage));
@@ -124,15 +124,19 @@ public class Enemy : MonoBehaviour
 
     public void DamageEnemy(int damage)
     {
+        //Logic
         cHealth -= damage;
         if (cHealth <= 0)
         {
             Death();
         }
 
+        //UI
         if (stats)
         {
             stats.SetHealth(cHealth, sHealth);
         }
+
+        //Anim
     }
 }
